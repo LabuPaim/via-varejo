@@ -73,7 +73,7 @@ Nest é um projeto de código aberto licenciado pelo MIT. Se quiser acessar a do
 
 ## Contato
 
-- Author - Victor Paim
+- Autor - Victor Paim
 - Linkedin - [@labupaim](https://www.linkedin.com/in/labupaim/)
 - GitHub - [@LabuPaim](https://github.com/LabuPaim)
 - WhatsApp -  +55 (71) 9 8300-6611
