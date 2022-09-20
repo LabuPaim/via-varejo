@@ -1,0 +1,8 @@
+{
+  "transacoes": [
+    { "entrada": 2000, "mercadoria": "Salário" },
+    { "saida": 200, "mercadoria": "Mercado" },
+    { "saida": 100, "mercadoria": "Combustível" },
+    { "saida": 35.5, "mercadoria": "Restaurante" }
+  ]
+}
