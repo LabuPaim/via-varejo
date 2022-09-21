@@ -71,12 +71,39 @@
         justify-content: space-between;
         width: 80%;
         padding: 0 20px 7px 0;
-        border-bottom: 2px solid rgb(159, 157, 157);
 
         h3 {
           font-size: 13px;
           font-weight: 700;
           color: black;
+        }
+      }
+
+      .Transacoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        border-top: 2px solid rgb(159, 157, 157);
+        padding: 5px 0 5px 0 ;
+        
+
+        .TransacoesInicial {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 5px 0 5px 0 ;
+          width: 100%;
+          gap: 5px;
+        }
+        .TransacoesFinal {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+        //   padding: 5px 0 5px 0 ;
+          width: 100%;
+          gap: 5px;
         }
       }
     }

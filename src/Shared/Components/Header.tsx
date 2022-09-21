@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { FiMenu, FiTriangle } from 'react-icons/fi';
 import { FaRegCircle } from 'react-icons/fa';
 import { GrCheckbox } from 'react-icons/gr';
