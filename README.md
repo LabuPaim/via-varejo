@@ -35,6 +35,11 @@ $ yarn add @mui/material @emotion/react @emotion/styled
 # Instalação da bibliotec Material Ui e o Emotion como motor
 ```
 
+```bash
+$ yarn add react-icons
+# Instalação da bibliotec React Icon
+```
+
 ## Instalação
 
 ```bash

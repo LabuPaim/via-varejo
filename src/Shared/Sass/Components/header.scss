@@ -1,0 +1,25 @@
+@import '../global.scss';
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include primary;
+  padding: 20px 30px;
+  font-size: 20px;
+
+  .iconGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40px;
+    gap: 2px;
+    font-size: 15px;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+
+}
+
