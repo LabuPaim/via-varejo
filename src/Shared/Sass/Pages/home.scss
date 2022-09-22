@@ -4,10 +4,12 @@
   @include displayColumnCenter;
   padding: 20px;
 
-  .Home {
+  .Home,
+  #Home {
     @include displayColumnCenter;
     width: 100%;
     gap: 20px;
+    max-width: 850px;
 
     .BoxInput {
       display: flex;
@@ -37,13 +39,14 @@
       }
     }
 
-    button {
+    .button {
       width: 100%;
       height: 35px;
       border-radius: 4px;
-      background-color: rgb(59, 55, 55);
+      background-color: #333333;
       color: white;
-      font-size: 14px;
+      
+      font-size: 13px;
       font-weight: 400;
     }
   }
@@ -80,30 +83,60 @@
       }
 
       .Transacoes {
-        display: flex;
-        flex-direction: row;
+        @include displayRowr;
         justify-content: space-between;
-        width: 100%;
         border-top: 2px solid rgb(159, 157, 157);
-        padding: 5px 0 5px 0 ;
-        
+        padding: 5px 0 5px 0;
 
         .TransacoesInicial {
-          display: flex;
-          flex-direction: row;
+          @include displayRowr;
           align-items: center;
-          padding: 5px 0 5px 0 ;
-          width: 100%;
+          padding: 5px 0 5px 0;
           gap: 5px;
+
+          h6 {
+            font-size: 14px;
+            font-weight: 400;
+            color: black;
+          }
         }
         .TransacoesFinal {
-          display: flex;
-          flex-direction: row;
+          @include displayRowr;
           justify-content: flex-end;
           align-items: center;
-        //   padding: 5px 0 5px 0 ;
-          width: 100%;
           gap: 5px;
+        }
+
+        h3 {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+
+      .total {
+        @include displayRowr;
+
+        justify-content: space-between;
+        border-top: 2px solid rgb(159, 157, 157);
+        padding: 5px 0 5px 0;
+        h3 {
+          padding: 0 0 0 10px;
+          font-size: 13px;
+          font-weight: 900;
+          color: black;
+        }
+        h4 {
+          padding: 0 0 0 10px;
+          font-size: 13px;
+          font-weight: 400;
+          color: black;
+        }
+
+        .lucro {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
         }
       }
     }
