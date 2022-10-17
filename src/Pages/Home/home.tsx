@@ -7,16 +7,20 @@ import '../../Shared/Sass/Pages/home.scss';
 const names = ['Compra', 'Venda'];
 
 const transacoes = [
-  { transacao: 'Compra', valor: 2532.12, mercadoria: 'Salário' },
-  { transacao: 'Venda', valor: 221, mercadoria: 'Mercado' },
-  { transacao: 'Venda', valor: 100, mercadoria: 'Combustível' },
+  { transacao: 'Compra', valor: '2532.12', mercadoria: 'Salário' },
+  { transacao: 'Venda', valor: '221,10', mercadoria: 'Mercado' },
+  { transacao: 'Venda', valor: '100', mercadoria: 'Combustível' },
 ];
 
-function formatReal(int: number) {
-  let tmp = int.toFixed(2) + '';
-  tmp = tmp.replace('.', ',');
-  tmp = tmp.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-  return tmp;
+function formatCalc(int: string) {
+  const temp = int.replace(',', '.');
+  const real = Number(parseFloat(temp).toFixed(2));
+
+  return real;
+}
+function formatReal(int: string) {
+  const real = parseInt(int).toFixed(2);
+  return real;
 }
 
 function Home() {
@@ -26,10 +30,11 @@ function Home() {
   function calcTotal() {
     setIsTotal(0);
     isList.forEach(trans => {
+      const velue = formatCalc(trans.valor);
       if (trans.transacao === 'Compra') {
-        setIsTotal(old => old + trans.valor);
+        setIsTotal(old => old + velue);
       } else {
-        setIsTotal(old => old - trans.valor);
+        setIsTotal(old => old - velue);
       }
       console.log(isTotal);
     });
@@ -45,7 +50,7 @@ function Home() {
 
     const formList = {
       transacao: event.target[0].value,
-      valor: Number(event.target[2].value),
+      valor: event.target[2].value,
       mercadoria: event.target[1].value,
     };
     const newList = isList;
@@ -134,7 +139,7 @@ function Home() {
             <Box className="total" key="Transacoestotal">
               <h3>Total</h3>
               <Box className="lucro" key="lucro">
-                <h3>R$ {formatReal(isTotal)}</h3>
+                <h3>R$ {isTotal}</h3>
                 {isTotal === 0 ? (
                   <></>
                 ) : isTotal > 0 ? (
