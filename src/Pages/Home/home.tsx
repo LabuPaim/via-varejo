@@ -4,12 +4,12 @@ import { Box } from '@mui/material';
 import { useState, useEffect } from 'react';
 import '../../Shared/Sass/Pages/home.scss';
 
-const names = ['Compra', 'Venda'];
+const names = ['Entrada', 'Saida'];
 
 const transacoes = [
-  { transacao: 'Compra', valor: '2532.12', mercadoria: 'Salário' },
-  { transacao: 'Venda', valor: '221,10', mercadoria: 'Mercado' },
-  { transacao: 'Venda', valor: '100', mercadoria: 'Combustível' },
+  { transacao: 'Entrada', valor: '2532.12', mercadoria: 'Salário' },
+  { transacao: 'Saida', valor: '221,10', mercadoria: 'Mercado' },
+  { transacao: 'Saida', valor: '100', mercadoria: 'Combustível' },
 ];
 
 function formatCalc(int: string) {
@@ -42,7 +42,7 @@ function Home() {
     setIsTotal(0);
     isList.forEach(trans => {
       const velue = formatCalc(trans.valor);
-      if (trans.transacao === 'Compra') {
+      if (trans.transacao === 'Entrada') {
         setIsTotal(old => old + velue);
       } else {
         setIsTotal(old => old - velue);
@@ -116,6 +116,7 @@ function Home() {
               id="inputValor"
               name="valor"
               key="valor"
+              required
             />
           </Box>
           <button className="button" type="submit">
@@ -134,7 +135,7 @@ function Home() {
               return (
                 <Box className="Transacoes" key="Transacoes">
                   <Box className="TransacoesInicial">
-                    {trans.transacao === 'Compra' ? (
+                    {trans.transacao === 'Entrada' ? (
                       <div key={index + 10}>+</div>
                     ) : (
                       <div key={index + 11}>-</div>
