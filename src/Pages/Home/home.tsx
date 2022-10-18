@@ -15,12 +15,23 @@ const transacoes = [
 function formatCalc(int: string) {
   const temp = int.replace(',', '.');
   const real = Number(parseFloat(temp).toFixed(2));
-
   return real;
 }
+
 function formatReal(int: string) {
-  const real = parseInt(int).toFixed(2);
-  return real;
+  const real = int.replace(',', '.');
+  let tmp = parseFloat(real).toFixed(2) + '';
+  tmp = tmp.replace('.', ',');
+  tmp = tmp.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+  return tmp;
+}
+
+function formatTotal(int: number) {
+  const real = int.toString();
+  let tmp = parseFloat(real).toFixed(2) + '';
+  tmp = tmp.replace('.', ',');
+  tmp = tmp.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+  return tmp;
 }
 
 function Home() {
@@ -139,7 +150,7 @@ function Home() {
             <Box className="total" key="Transacoestotal">
               <h3>Total</h3>
               <Box className="lucro" key="lucro">
-                <h3>R$ {isTotal}</h3>
+                <h3>R$ {formatTotal(isTotal)}</h3>
                 {isTotal === 0 ? (
                   <></>
                 ) : isTotal > 0 ? (
